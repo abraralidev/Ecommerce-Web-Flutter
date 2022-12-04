@@ -41,7 +41,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
       appBar: AppBar(
         title: Text(widget.title!),
       ),
-      body: Center(
+      body:  ProductModel == null || productmodel!.isEmpty
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          :Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
